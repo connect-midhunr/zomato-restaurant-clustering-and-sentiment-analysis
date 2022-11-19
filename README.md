@@ -48,7 +48,7 @@ The following insights were gained from EDA:
 ### 🖨️ Restaurant Clustering Based on Cuisines
 
 #### 💹 Clusters by K Means Algorithm
-<img src="Images/cluster_cuisine_kmeans.png" alt="Result">
+<img src="Images/cluster_cuisine_kmeans_1.png" alt="Result">
 
 #### 💹 Clusters by DBSCAN Algorithm
 <img src="Images/cluster_cuisine_dbscan.png" alt="Result">

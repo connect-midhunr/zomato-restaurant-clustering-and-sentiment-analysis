@@ -41,11 +41,11 @@ The main objective is to understand the existing data and analyze their trends a
 ## :book: Exploratory Data Analysis
 
 The following insights were gained from EDA:
-<li>No e-mails of campaign type 1 got ignored.</li>
-<li>If campaign type is 1, then the mail has 66% chance of getting read and 23% change of getting acknowledged.</li>
-<li>Customer location or time of day does not affect the status of e-mail.</li>
-<li>As the number of previous communication increases, the chances of the e-mail being read or acknowledged also increases.</li>
-<li>E-mails tend to get ignored when word count is greater than 800.</li>
+<li>Collage - Hyatt Hyderabad Gachibowli is the most expensive restaurant and Mohammedia Shawarma, and Amul are the most affordable ones.</li>
+<li>North Indian cuisine is the most popular cuisine.</li>
+<li>Anvesh Chowdary is the most experienced reviewer while Satwinder Singh is the most popular one.</li>
+<li>AB's - Absolute Barbecues is the highest rated restaurant.</li>
+<li>Some linear relationship exists between the average rating of restaurants and the cost of food.</li>
 
 ## :book: Modelling
 

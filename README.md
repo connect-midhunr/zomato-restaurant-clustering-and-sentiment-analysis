@@ -47,16 +47,23 @@ The following insights were gained from EDA:
 <li>AB's - Absolute Barbecues is the highest rated restaurant.</li>
 <li>Some linear relationship exists between the average rating of restaurants and the cost of food.</li>
 
-## :book: Modelling
+## :book: Restaurant Clustering Based on Cuisines
 
-<img src="Images/resullt_email.png" alt="Result">
+<img src="Images/cluster_cuisine_kmeans.png" alt="Result">
+<img src="Images/cluster_cuisine_dbscan.png" alt="Result">
+
+## :book: Restaurant Clustering Based on Cost and Rating
+
+<img src="Images/cluster_costrating_kmeans.png" alt="Result">
+<img src="Images/cluster_costrating_dbscan.png" alt="Result">
 
 ## 📘: Conclusion
 
 The following conclusions were drawn from Modelling:
-<li>Oversampled data seems to be better than undersampled data. This can be due to the fact that undersampling causes loss of information.</li>
-<li>The model built using XGBoost algorithm with SMOTE dataset performed better than the other models. It should be preferred for predicting mail statuses.</li>
-<li>If model interpretability is more important than accuracy, model built using logistic regression algorithm and SMOTE dataset should be chosen over the one using XGBoost algorithm. It is the best performer among the white box models.</li>
+<li>Either of the two models, trained using K means algorithm or DBSCAN algorithm, can be chosen for clustering the restaurant dataset based on cuisines, depending on the number of clusters preferred and whether or not outliers be included.</li>
+<li>The model built using K means algorithm is selected for clustering based on cost and ratings.</li>
+<li>For sentiment analysis, the model built using random forest algorithm was chosen over others.</li>
+<li>If model interpretability is more important than accuracy, model built using logistic regression should be chosen. Since the difference between accuracy of these two models is less than 7%, there won't be much difference in the result.</li>
 
 ## :scroll: Credits
 
@@ -71,15 +78,13 @@ Midhun R | Avid Learner | Data Analyst | Data Scientist | Machine Learning Enthu
 
 ## :books: References
 <ul>
-  <li><p>Towards Data Science, 'Having an Imbalanced Dataset? Here Is How You Can Fix It.'. [Online].</p>
-      <p>Available: https://towardsdatascience.com/having-an-imbalanced-dataset-here-is-how-you-can-solve-it-1640568947eb/</p>
+  <li><p>Scikit Learn, 'sklearn.preprocessing.MultiLabelBinarizer'. [Online].</p>
+      <p>Available: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MultiLabelBinarizer.html/</p>
   </li>
-  <li><p>Machine Learning Mastery, 'Multinomial Logistic Regression With Python'. [Online].</p>
-      <p>Available: https://machinelearningmastery.com/multinomial-logistic-regression-with-python/</p>
+  <li><p>Towards Data Science, 'A One-Stop Shop for Principal Component Analysis'. [Online].</p>
+      <p>Available: https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c/</p>
   </li>
-  <li><p>Kaggle, 'How to Choose Right Metric for Evaluating ML Model'. [Online].</p>
-      <p>Available: https://www.kaggle.com/code/vipulgandhi/how-to-choose-right-metric-for-evaluating-ml-model/</p>
+  <li><p>Medium, 'Silhouette Analysis in K-means Clustering'. [Online].</p>
+      <p>Available: https://medium.com/@cmukesh8688/silhouette-analysis-in-k-means-clustering-cefa9a7ad111/</p>
   </li>
 </ul>
-
-<a href="https://www.freepik.com/free-vector/email-campaign-concept-illustration_7367537.htm#query=email&position=0&from_view=search&track=sph">Image by storyset</a> on Freepik

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sentiment Analysis</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Nabla&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="banner">
+                <h1 id="heading">
+                    Restaurant Review Sentiment Analysis
+                </h1>
+            </div>
+            <div id="description-container">
+                <p id="description">
+                    This web application uses a machine learning algorithm, based on random forest algorithm, which was trained on zomato restaurant review data to determine the sentiment of reviews.
+                </p>
+            </div>
+            <div id="form-container">
+                <form method="post" action="/predict_sentiment" id="predictor-form">
+                    <input name="text" id="text-input" type="input" required value="Enter the review" onclick="ClearDefaultText()">
+                    <button id="submit-button" type="submit" onmouseover="ChangeButtonColor()" onmouseout="RevertButtonColor()" onmousedown="RevertButtonColor()" onmouseup="ChangeButtonColor()">Predict</button> 
+                </form>
+            </div>
+            <div id="sentiment-analysis">
+                <p class="label">Review:</p>
+                <p class="result">{{review}}</p>
+                <p class="label">Sentiment:</p>
+                <p class="result">{{sentiment}}</p>
+            </div>
+            <div id="footer">
+                <div id="footer-description">
+                    <p class="footer-text" id="footer-text-created">Created by</p>
+                    <p class="footer-text" id="footer-text-name">Midhun R</p>
+                </div>
+                <div id="footer-icons">
+                    <div id="footer-link">
+                        <a href="https://github.com/connect-midhunr">
+                            <img class="link-img" src="{{ url_for('static', path='images/icons/github_icon.png') }}" width="16" height="16" alt="Github Link"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/connectmidhunr/">
+                            <img class="link-img" src="{{ url_for('static', path='images/icons/linkedin_icon.png') }}" width="16" height="16" alt="LinkedIn Link"/>
+                        </a>
+                        <a href="https://medium.com/@connect.midhunr">
+                            <img class="link-img" src="{{ url_for('static', path='images/icons/medium_icon.png') }}" width="28" height="16" alt="Medium Link"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="{{ url_for('static', path='script/script.js') }}"></script>
+</html>

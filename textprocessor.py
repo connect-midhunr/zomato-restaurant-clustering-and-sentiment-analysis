@@ -15,12 +15,15 @@ def tokenize(text):
 
   # removing punctuations
   mod_text = re.sub('[^a-zA-Z]', ' ', mod_text)
+  print('mod_text:', mod_text)
 
   # converting all characters to lower case and splitting into words
   text_array = mod_text.lower().split()
+  print('text_array:', text_array)
 
   # removing stopwords
-  text_array = [word for word in mod_text if word not in get_stop_words('english')]
+  text_array = [word for word in text_array if word not in get_stop_words('english')]
+  print('text_array:', text_array)
 
   return text_array
 
@@ -47,6 +50,9 @@ def process_text(text):
     """
     Function to process text for sentiment predict
     """
+    print('text:', text)
     text_array = tokenize(text)
+    print('text_array:', text_array)
     text = stemming(text_array)
+    print('text:', text)
     return vectorize(text)

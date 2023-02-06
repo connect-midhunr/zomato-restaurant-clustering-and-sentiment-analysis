@@ -23,8 +23,12 @@ def index(request: Request):
 # defining prediction api for sentiment analysis
 @app.post('/predict_sentiment')
 def predict_sentiment(request: Request, text: str = Form(...)):
+    print('text:', text)
     processed_text = process_text(text)
-    if model.predict(processed_text)[0] == 1:
+    print('processed_text:', processed_text)
+    result = model.predict(processed_text)
+    print('result:', result)
+    if result[0] == 1:
         sentiment = 'Positive'
     else:
         sentiment = 'Negative'

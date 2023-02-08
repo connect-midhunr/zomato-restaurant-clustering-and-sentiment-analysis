@@ -7,6 +7,7 @@ from textprocessor import process_text
 
 # loading model
 model = pickle.load(open('./models/sentiment_model.pkl', 'rb'))
+vectorizer = pickle.load(open('./models/text_vectorizer.pkl', 'rb'))
 
 # initializing app
 app = FastAPI()
@@ -24,11 +25,11 @@ def index(request: Request):
 @app.post('/predict_sentiment')
 def predict_sentiment(request: Request, text: str = Form(...)):
     print('text:', text)
-    processed_text = process_text(text)
+    processed_text = process_text(text, vectorizer)
     print('processed_text:', processed_text)
     result = model.predict(processed_text)
     print('result:', result)
-    if result[0] == 1:
+    if result == 1:
         sentiment = 'Positive'
     else:
         sentiment = 'Negative'

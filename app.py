@@ -18,12 +18,12 @@ app.mount('/static', StaticFiles(directory='./static'), 'static')
 
 # defining index page
 @app.get('/')
-def index(request: Request):
+async def index(request: Request):
     return templates.TemplateResponse('index.html', {'request': request})
 
 # defining prediction api for sentiment analysis
 @app.post('/predict_sentiment')
-def predict_sentiment(request: Request, text: str = Form(...)):
+async def predict_sentiment(request: Request, text: str = Form(...)):
     print('text:', text)
     processed_text = process_text(text, vectorizer)
     print('processed_text:', processed_text)

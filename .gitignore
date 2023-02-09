@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 
-#zomato
-zomato/
+#virtual environment
+zom/

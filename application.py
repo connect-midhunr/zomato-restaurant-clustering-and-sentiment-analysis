@@ -10,19 +10,19 @@ model = pickle.load(open('./models/sentiment_model.pkl', 'rb'))
 vectorizer = pickle.load(open('./models/text_vectorizer.pkl', 'rb'))
 
 # initializing app
-app = FastAPI()
+application = FastAPI()
 
 # initializing jinja2 templates and static files
 templates = Jinja2Templates(directory='./templates')
-app.mount('/static', StaticFiles(directory='./static'), 'static')
+application.mount('/static', StaticFiles(directory='./static'), 'static')
 
 # defining index page
-@app.get('/')
+@application.get('/')
 async def index(request: Request):
     return templates.TemplateResponse('index.html', {'request': request})
 
 # defining prediction api for sentiment analysis
-@app.post('/predict_sentiment')
+@application.post('/predict_sentiment')
 async def predict_sentiment(request: Request, text: str = Form(...)):
     print('text:', text)
     processed_text = process_text(text, vectorizer)
@@ -36,4 +36,4 @@ async def predict_sentiment(request: Request, text: str = Form(...)):
     return templates.TemplateResponse('index.html', {'request': request, 'review': "\"" + text + "\"", 'sentiment': sentiment})
 
 if __name__ == '__main__':
-    uvicorn.run(app)
+    uvicorn.run(application)

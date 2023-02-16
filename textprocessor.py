@@ -3,7 +3,7 @@ import re
 import nltk
 from stop_words import get_stop_words
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 nltk.download('wordnet')
 import pickle
 
@@ -47,7 +47,7 @@ def vectorize(text: str, vectorizer):
     return text_matrix
 
 # defining a function for text processing
-def process_text(text: str, vectorizer: TfidfVectorizer):
+def process_text(text: str, vectorizer: CountVectorizer):
     """
     Function to process text for sentiment predict
     """
@@ -57,7 +57,6 @@ def process_text(text: str, vectorizer: TfidfVectorizer):
     text = stemming(text_array)
     print('text:', text)
     return vectorize(text, vectorizer)
-
 
 # def main():
 #     vectorizer = pickle.load(open('./models/text_vectorizer.pkl', 'rb'))

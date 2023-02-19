@@ -3,7 +3,7 @@ import re
 import nltk
 from stop_words import get_stop_words
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 nltk.download('wordnet')
 import pickle
 

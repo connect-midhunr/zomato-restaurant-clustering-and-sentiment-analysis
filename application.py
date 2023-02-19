@@ -29,7 +29,7 @@ async def predict_sentiment(request: Request, text: str = Form(...)):
     print('processed_text:', processed_text)
     result = model.predict(processed_text)
     print('result:', result)
-    if result == 1:
+    if result[0] == 1:
         sentiment = 'Positive'
     else:
         sentiment = 'Negative'

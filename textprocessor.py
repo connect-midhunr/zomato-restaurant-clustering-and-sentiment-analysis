@@ -47,7 +47,7 @@ def vectorize(text: str, vectorizer):
     return text_matrix
 
 # defining a function for text processing
-def process_text(text: str, vectorizer: CountVectorizer):
+def process_text(text: str, vectorizer: WordNetLemmatizer):
     """
     Function to process text for sentiment predict
     """

@@ -1,5 +1,6 @@
 <p align="center"> 
   <img src="Images/banner_zomato.png" alt="Banner">
+  Link to deployed model: http://sentimenent-analysis-zomato-review.ap-south-1.elasticbeanstalk.com/
 </p>
 
 In this project, I have attempted to analyze the metadata and reviews of popular restaurants in Hyderabad and build machine learning models to cluster the restaurants into different segments based on cuisines and analyze the sentiments of the reviews given by the customers. 
@@ -70,6 +71,16 @@ The following insights were gained from EDA:
 <img src="Images/rf_best_parameters.png" alt="Result">
 <img src="Images/rf_confusion_matrix.png" alt="Result">
 <img src="Images/rf_roc_curve.png" alt="Result">
+
+## :book: Deployment
+
+<li>A web application is built to demonstrate the working of the trained machine learning model using a combination of HTML, CSS, and JavaScript.</li>
+<li>The prediction of sales using the trained ML model is carried out via a Flask API.</li>
+<li>This web application is dockerized and deployed with AWS Elastic Beanstalk, employing CI/CD pipeline.</li>
+
+<img class="image-ss" src="Images/WebAppDesktop.jpg" height="300px" alt="WebAppDesktop"> <img class="image-ss" src="Images/WebAppMobile.png" height="300px" alt="WebAppMobile">
+
+Link to deployed model: http://sentimenent-analysis-zomato-review.ap-south-1.elasticbeanstalk.com/ 
 
 ## 📘 Conclusion
 The following conclusions were drawn from Modelling:
